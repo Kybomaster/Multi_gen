@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "multigen:three_skins_template",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "skin1": {
+        "minecraft:skin_id": { "value": 1 }
+      },
+      "skin2": {
+        "minecraft:skin_id": { "value": 2 }
+      },
+      "skin3": {
+        "minecraft:skin_id": { "value": 3 }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:type_family": {
+        "family": []
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:movement": {
+        "value": 0.215
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_break_doors": true,
+        "avoid_portals": false
+      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:physics": {},
+      "minecraft:behavior.float": {
+        "priority": 2,
+        "speed_multiplier": 1.0
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 1,
+            "remove": {},
+            "add": {
+              "component_groups": [
+                "skin1"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {},
+            "add": {
+              "component_groups": [
+                "skin2"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {},
+            "add": {
+              "component_groups": [
+                "skin3"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "namespace:id",
+      "properties": {
+        "block:rotation": [ 0, 1, 2, 3, 4, 5, 6 ]
+      }
+    },
+    "components": {
+      "minecraft:destroy_time": 0.3,
+      "minecraft:friction": 0.7,
+      "minecraft:map_color": "#FFFFFF",
+      "minecraft:explosion_resistance": 3.0,
+      "minecraft:block_light_absorption": 1.0,
+      "minecraft:block_light_emission": 0.0,
+      "minecraft:unit_cube": {},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "id",
+          "render_method": "blend"
+        }
+      },
+      "tag:stone": {},
+      "minecraft:on_player_placing": {
+        "event": "update_rotation"
+      },
+      "minecraft:creative_category": {
+        "category": "nature"
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_property('block:rotation') == 2",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "condition": "query.block_property('block:rotation') == 3",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            -180,
+            0
+          ]
+        }
+      },
+      {
+        "condition": "query.block_property('block:rotation') == 4",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            90,
+            0
+          ]
+        }
+      },
+      {
+        "condition": "query.block_property('block:rotation') == 5",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            -90,
+            0
+          ]
+        }
+      },
+      {
+        "condition": "query.block_property('block:rotation') == 1",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            0,
+            -90
+          ]
+        }
+      },
+      {
+        "condition": "query.block_property('block:rotation') == 0",
+        "components": {
+          "minecraft:rotation": [
+            0,
+            0,
+            90
+          ]
+        }
+      }
+    ],
+    "events": {
+      "update_rotation": {
+        "set_block_property": {
+          "block:rotation": "query.cardinal_facing"
+        }
+      }
+    }
+  }
+}

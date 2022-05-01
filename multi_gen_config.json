@@ -1,0 +1,26 @@
+{
+    "profile": "default", //Можно создать другие профили
+    "profiles": {
+        "default": {
+            "parameters": {
+                "name_spaces": {
+                    "name_space": "des:", //Например "multigen:" на английском
+                    "RP_name": "Desert_Dunge", //Например "Multi_gen" на английском. Не особо важно
+                    "BP_folder_name": "Пустынныйх(1)" //Нужно вписать название папки бехавиор пака
+                    },
+                "backup_save": {
+                    "save": "", //Сохранять ли бэкап
+                    "save_path": "C:/Users/Зотов Андрей/Desktop/backups", //Путь сохранения бэкапа
+                    "zip_or_mcworld": "zip", //Что будет после точки у архива с бэкапом
+                    "open_file": "" //Открывать ли файл после его создания
+                },
+                "textures_list": "y",
+                "item_textures": "",
+                "item_bp": "",
+                "terrain_textures": "y",
+                "blocks_bp": "y",
+                "get_geometries" : ""
+            }
+        }
+    }
+}
